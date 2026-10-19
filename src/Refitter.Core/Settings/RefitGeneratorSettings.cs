@@ -473,4 +473,11 @@ public class RefitGeneratorSettings : IOutputConfiguration, INamingConfiguration
     [JsonPropertyName("silent")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public bool Silent { get; set; }
+
+    /// <summary>
+    /// Reuse verified files from the last successful CLI/MSBuild generation when
+    /// generation fails. Requires a settings file. Default is false.
+    /// </summary>
+    [Description("Reuse existing generated files if generation fails. CLI/MSBuild only; default is false.")]
+    public bool ReuseExistingOnFailure { get; set; }
 }
